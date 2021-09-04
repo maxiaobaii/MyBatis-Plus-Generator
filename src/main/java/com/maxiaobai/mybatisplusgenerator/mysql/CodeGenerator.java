@@ -20,7 +20,7 @@ public class CodeGenerator {
     public static String scanner(String tip) {
         Scanner scanner = new Scanner(System.in);
         StringBuilder help = new StringBuilder();
-        help.append("请输入" + tip + "：");
+        help.append("请输入要生成的表名：");
         System.out.println(help.toString());
         if (scanner.hasNext()) {
             String ipt = scanner.next();
@@ -55,7 +55,7 @@ public class CodeGenerator {
                 .setDbType(DbType.MYSQL);
 
         PackageConfig pc = new PackageConfig()
-                .setParent("com.maxiaobai")
+                .setParent("org.baomidou")
                 .setEntity("PO")
                 .setService("service")
                 .setMapper("mapper")
@@ -76,7 +76,7 @@ public class CodeGenerator {
             @Override
             public String outputFile(com.baomidou.mybatisplus.generator.config.po.TableInfo tableInfo) {
                 // 自定义输出文件名 ， 如果你 Entity 设置了前后缀、此处注意 xml 的名称会跟着发生变化！！
-                return "E:\\mybatis-plus\\resources\\mapper/"
+                return System.getProperty("user.dir") + "/src/main/resources/mapper/"
                         + tableInfo.getEntityName() + "Mapper" + StringPool.DOT_XML;
             }
         });
