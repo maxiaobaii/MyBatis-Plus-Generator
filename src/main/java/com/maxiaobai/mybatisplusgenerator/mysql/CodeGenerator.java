@@ -48,10 +48,10 @@ public class CodeGenerator {
         ;
 
         DataSourceConfig dsc = new DataSourceConfig()
-                .setUrl("jdbc:mysql://staging.tidbk8s.tidb.srv:30503/xmstore_fms?characterEncoding=utf8&useSSL=true&serverTimezone=GMT%2B8&rewriteBatchedStatements=true")
+                .setUrl("")
                 .setDriverName("com.mysql.cj.jdbc.Driver")
-                .setUsername("xmstore_fms_wr")
-                .setPassword("KeiQqzcnEnBhGcTObmqWWCju")
+                .setUsername("")
+                .setPassword("")
                 .setDbType(DbType.MYSQL);
 
         PackageConfig pc = new PackageConfig()
